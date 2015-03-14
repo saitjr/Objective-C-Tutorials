@@ -19,5 +19,5 @@ OC初学者，有C语言或其他语言基础
 如果在学习过程中遇到无法解决的难点，请联系我`tangjr.work@gmail.com`
 
 ##纠错
-如果发现错误或歧义，请直接在github上fork并修改，仓库地址：[https://github.com/saitjr/objective-c-language.git](https://github.com/saitjr/objective-c-language.git)
+如果发现错误或歧义，请直接在github上fork并修改，仓库地址：[https://github.com/saitjr/Objective-C-Tutorials.git](https://github.com/saitjr/Objective-C-Tutorials.git)
 
