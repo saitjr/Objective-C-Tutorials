@@ -64,12 +64,15 @@
 
 ```
 @interface Person : NSObject {
-    
-    NSString *name; // NSString是OC中的字符串
-    NSInteger age;  // NSInteger是OC中的整型，64位下是long，其他情况下是int
-    float height;
+
+    NSString *_name; // NSString是OC中的字符串
+    NSInteger _age;  // NSInteger是OC中的整型，64位下是long，其他情况下是int
+    float _height;
 }
 
 @end
 ```
-在上面这个例子中，因为`NSString`是OC中的类，name为对象，所以需要写成`*name`，而`NSInteger`其实是`typedef long NSInteger;`基本类型，所以写为`age`。
+
+在写代码的时候，应该时刻注意编码规范。在Cocoa编码规范中，成员变量在定义时，名称前需要加上`_`下划线。
+
+在上面这个例子中，因为`NSString`是OC中的类，name为对象，所以需要写成`*_name`，而`NSInteger`其实是`typedef long NSInteger;`基本类型，所以写为`_age`。
