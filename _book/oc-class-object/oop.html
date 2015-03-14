@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Glossary | 写在开头</title>
+        <title>OOP | 写在开头</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -12,17 +12,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
         
     
     
     
     
-    
-
-    
-    
+    <link rel="prev" href="../oc-class-object/oc-introduction.html" />
     
 
         
@@ -30,11 +27,11 @@
     <body>
         
         
-<link rel="stylesheet" href="gitbook/style.css">
+<link rel="stylesheet" href="../gitbook/style.css">
 
 
         
-    <div class="book"  data-level="" data-basepath="." data-revision="1426338555750">
+    <div class="book"  data-level="1.2" data-basepath=".." data-revision="1426347631596">
     
 
 <div class="book-summary">
@@ -55,13 +52,67 @@
         <li class="chapter " data-level="0" data-path="index.html">
             
                 
-                    <a href="./index.html">
+                    <a href="../index.html">
                         <i class="fa fa-check"></i>
                         
                          Introduction
                     </a>
                 
             
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="oc-class-object/README.html">
+            
+                
+                    <a href="../oc-class-object/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         OC-Class-Object
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="oc-class-object/oc-introduction.html">
+            
+                
+                    <a href="../oc-class-object/oc-introduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         oc-introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="1.2" data-path="oc-class-object/oop.html">
+            
+                
+                    <a href="../oc-class-object/oop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         OOP
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -146,33 +197,69 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >写在开头</a>
+        <a href="../" >写在开头</a>
     </h1>
 </div>
 
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_1582">
+                    
+                        <h1 id="">面向对象</h1>
+<h3 id="">概念</h3>
+<p>很多招聘信息上会出现这样一个要求：<em>深入理解OOP</em></p>
+<p>什么是OOP？</p>
+<p>OOP（Object-oriented programming）译为面向对象程序设计，常见的棉城对象语言有：Java</p>
+<h3 id="">初步理解</h3>
+<p>之前我们学到的C语言，是一门面向过程的语言，但是OC是面向对象的。直接这样阐述可能会显得很抽象也显得很苍白，那么，举一个例子（事实上，这也是OC的原理）：</p>
+<p>在我们学习C语言的时候，我们接触到了一个概念，叫做结构体。现在假设有一个名为学生的结构体，我们可以将它定义为：</p>
+<pre><code>typedef struct {
 
+    char name[20];
+    int age;
+    float height;
+} Student;
+</code></pre><ol>
+<li>那么在OC中，我们将结构体称为<strong><font color=red>类</font></strong>；</li>
+<li>姓名、年龄、身高等信息，称为<strong><font color=red>属性</font></strong>（或成员变量，之后会详细介绍属性和成员变量的关系）；</li>
+<li>将声明新的结构体变量<code>Student *student1;</code>，称为<strong><font color=red>对象</font></strong>；</li>
+<li>将这个学生的一些动作行为（如读书、写字等），称为<strong><font color=red>方法</font></strong>。</li>
+</ol>
+<h3 id="">面向对象的特点</h3>
+<p>我们在学习一门面向对象的语言时，通常会接触到一下几个术语：</p>
+<ol>
+<li>封装；</li>
+<li>继承；</li>
+<li>多态。</li>
+</ol>
+<p>的确，这是面向对象的几大特点</p>
 
+                    
+                    </section>
+                
+                
                 </div>
             </div>
         </div>
 
+        
+        <a href="../oc-class-object/oc-introduction.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: oc-introduction"><i class="fa fa-angle-left"></i></a>
         
         
     </div>
 </div>
 
         
-<script src="gitbook/app.js"></script>
+<script src="../gitbook/app.js"></script>
 
     
     <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     
-    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
     
 
 <script>

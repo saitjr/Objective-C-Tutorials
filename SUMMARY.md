@@ -2,5 +2,7 @@
 
 * [Introduction](README.md)
 * [OC-Class-Object](oc-class-object/README.md)
-   * [oc-introduction](oc-class-object/oc-introduction.md)
+   * [OC-Introduction](oc-class-object/oc-introduction.md)
+   * [OOP](oc-class-object/oop.md)
+   * [Class](oc-class-object/class.md)
 
