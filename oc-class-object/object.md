@@ -6,14 +6,29 @@
 
 > 程序员从来不缺少对象，因为程序里到处都是对象
 
-当然，这种幽默只有程序员，也只有知道面向对象的程序员才懂。 
+当然，这种幽默只有程序员，也只有知道面向对象的程序员才懂。
+
+##main.m
+创建完工程以后，系统在main.m中做了些事情，我们一一解析下：
+
+```
+#import <Foundation/Foundation.h>           // 引入头文件
+
+int main(int argc, const char * argv[]) {   // main函数
+    @autoreleasepool {                      // 自动释放池，将在内存管理章节中讲到
+        // insert code here...
+        NSLog(@"Hello, World!");            // NSLog输出，字符串使用@""
+    }
+    return 0;                               // 返回值
+}
+```
 
 ##实例化对象
 
 从类到对象这个转变，我们有一个专业术语，叫做*实例化*。
 
 1. 打开[上一讲的工程](https://github.com/saitjr/Objective-C-Tutorials-Demo/tree/master/1-OC-Class-Object/Class/ClassDemo)；
-2. 在main.m文件中引入person类的头`#import "Person.h"`；
+2. 在main.m文件中引入person类的头`#import "Person.h"`（为什么使用`#import`而不使用`#include`，请见文章[#include、#import和@class区别](http://www.brighttj.com/ios/oc-include-import-class-difference.html)）；
 3. 然后实例化Person类，并用临时变量person1去接收`Person *person1 = [[Person alloc] init];`
 
 在实例化这一步中，`alloc`表示开辟一块内存，`init`表示初始化这一块内存，然后将初始化完的这块内存的指针，交给指针`*person1`。`person1`就是Person类的一个对象。
@@ -43,7 +58,7 @@
 
 ```
 - (instancetype)initWithName:(NSString *)name age:(NSInteger)age {
-    
+
 }
 
 ```
@@ -63,17 +78,17 @@
 
 ```
 - (instancetype)init {
-    
+
     self = [super init]; // 通过父类的init方法，去初始化一个对象
-    
+
     if (self) {
-        
+
         // 需要添加的特性
         _name = @"tangjr"; // @""表示字符串对象
         _age = 10;
         _height = 160.2;
     }
-    
+
     return self;
 }
 
@@ -94,17 +109,17 @@
 
 ```
 - (instancetype)initWithName:(NSString *)name age:(NSInteger)age height:(float)height {
-    
+
     self = [super init];
-    
+
     if (self) {
-        
+
         // 需要添加的特性
         _name = name;
         _age = age;
         _height = height;
     }
-    
+
     return self;
 }
 

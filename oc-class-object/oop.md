@@ -6,7 +6,7 @@
 
 什么是OOP？
 
-OOP（Object-oriented programming）译为面向对象程序设计，常见的棉城对象语言有：Java、OC、C++等等。
+OOP（Object-oriented programming）译为面向对象程序设计，常见的面向对象语言有：Java、OC、C++等等。
 
 ###初步理解
 
