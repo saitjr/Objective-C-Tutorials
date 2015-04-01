@@ -14,7 +14,7 @@ OOP（Object-oriented programming）译为面向对象程序设计，常见的�
 
 在我们学习C语言的时候，我们接触到了一个概念，叫做结构体。现在假设有一个名为学生的结构体，我们可以将它定义为：
 
-```
+```c
 typedef struct {
 
     char name[20];

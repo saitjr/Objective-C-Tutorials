@@ -52,6 +52,28 @@
 
 两个关键字都必须和`@end`成对出现，表示声明/实现的结束。
 
+```objc
+#import <Foundation/Foundation.h>
+
+@interface Person : NSObject
+
+// 内容写在@interface与@end之间
+
+@end
+
+```
+
+```objc
+#import "Person.h"
+
+@implementation Person
+
+// 内容写在@implementation与@end之间
+
+@end
+
+```
+
 ##类的简介
 关于类的简介，有几个概念不得不提：
 
@@ -62,7 +84,7 @@
 ##成员变量的定义
 之前讲到了结构体中变量的定义，类中成员变量的定义如下（<font color=red>注意：是在.h文件中定义</font>）：
 
-```
+```objective-c
 @interface Person : NSObject {
 
     NSString *_name; // NSString是OC中的字符串

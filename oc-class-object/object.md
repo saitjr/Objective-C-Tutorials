@@ -11,7 +11,7 @@
 ##main.m
 创建完工程以后，系统在main.m中做了些事情，我们一一解析下：
 
-```
+```objc
 #import <Foundation/Foundation.h>           // 引入头文件
 
 int main(int argc, const char * argv[]) {   // main函数
@@ -23,15 +23,40 @@ int main(int argc, const char * argv[]) {   // main函数
 }
 ```
 
+其中`NSLog`也支持像`printf`一样使用占位符来输出，需要注意的是整型的占位符不再是`%d`而是`%i`。
+
+```objc
+
+NSLog(@"输出一个整型:%i, 浮点型:%f", 10, 10.1);
+
+```
+
 ##实例化对象
 
 从类到对象这个转变，我们有一个专业术语，叫做*实例化*。
 
 1. 打开[上一讲的工程](https://github.com/saitjr/Objective-C-Tutorials-Demo/tree/master/1-OC-Class-Object/Class/ClassDemo)；
 2. 在main.m文件中引入person类的头`#import "Person.h"`（为什么使用`#import`而不使用`#include`，请见文章[#include、#import和@class区别](http://www.brighttj.com/ios/oc-include-import-class-difference.html)）；
-3. 然后实例化Person类，并用临时变量person1去接收`Person *person1 = [[Person alloc] init];`
+3. 然后实例化Person类，并用临时变量person1去接收，最终代码如下：
 
-在实例化这一步中，`alloc`表示开辟一块内存，`init`表示初始化这一块内存，然后将初始化完的这块内存的指针，交给指针`*person1`。`person1`就是Person类的一个对象。
+```objc
+
+#import <Foundation/Foundation.h>
+#import "Person.h"
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        // insert code here...
+
+        // 实例化Person，实例化的对象为person1
+        // 首先需要使用alloc方法，开辟一块内存
+        // 然后使用init方法对这块内存进行初始化
+        Person *person1 = [[Person alloc] init];
+    }
+    return 0;
+}
+
+```
 
 ##方法的书写
 
@@ -49,65 +74,50 @@ int main(int argc, const char * argv[]) {   // main函数
 
 方法的声明：
 
-```
+```objc
 - (instancetype)initWithName:(NSString *)name age:(NSInteger)age;
 
 ```
 
 方法的实现：
 
-```
+```objc
 - (instancetype)initWithName:(NSString *)name age:(NSInteger)age {
 
 }
 
 ```
 
-
 ##对象的初始化
 刚才初始化Person对象的时候，我们所使用的是`init`方法，但是这个`init`方法是属于`NSObject`的，对于Person来讲，它有姓名、年龄这些独有的成员变量，那么我们想要在初始化它的时候，就给这个对象相应的姓名、年龄应该怎么办呢？
 
-对于这个需求，有两种解决方案：
-
-1. 重写`init`方法；
-2. 自定义初始化方法；
-
-####重写`init`方法：
-
-重写方法有一个几乎固定的格式，打开.m文件：
-
-```
-- (instancetype)init {
-
-    self = [super init]; // 通过父类的init方法，去初始化一个对象
-
-    if (self) {
-
-        // 需要添加的特性
-        _name = @"tangjr"; // @""表示字符串对象
-        _age = 10;
-        _height = 160.2;
-    }
-
-    return self;
-}
-
-```
-
 ####自定义初始化方法
-
-重写`init`方法的弊端是：每一个对象的信息都一样。这明显不是我们想要的，所以，对于每个对象都不同的信息，我们给出一个能自定义信息的初始化方法。
 
 首先在.h的`@interface`内部声明方法（如果不声明，则外则不可访问）：
 
-```
+```objc
+#import <Foundation/Foundation.h>
+
+@interface Person : NSObject {
+
+    NSString *_name;
+    NSInteger _age;
+    float _height;
+}
+
 - (instancetype)initWithName:(NSString *)name age:(NSInteger)age height:(float)height;
+
+@end
 
 ```
 
 然后在.m中进行实现：
 
-```
+```objc
+#import "Person.h"
+
+@implementation Person
+
 - (instancetype)initWithName:(NSString *)name age:(NSInteger)age height:(float)height {
 
     self = [super init];
@@ -123,11 +133,19 @@ int main(int argc, const char * argv[]) {   // main函数
     return self;
 }
 
+@end
+
 ```
 
 那么这个时候，我们在main.m中的Person初始化方法也需要修改：
 
-```
+```objc
 Person *person2 = [[Person alloc] initWithName:@"tangjr" age:10 height:100];
 
 ```
+
+##description方法
+
+当使用NSLog打印对象信息的时候，系统会走该对象的description方法。
+
+比如这里，我们想要输出`person2`这个人的信息，就可以通过重写description来实现。
