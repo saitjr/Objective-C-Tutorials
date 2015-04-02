@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="2.1.3" data-basepath=".." data-revision="1427799280254">
+    <div class="book"  data-level="2.1.3" data-basepath=".." data-revision="1427936694254">
     
 
 <div class="book-summary">
@@ -411,9 +411,19 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_15">
+                    <section class="normal" id="section-gitbook_17">
                     
-                        <h1 id="how-to-override">How to override?</h1>
+                        <h1 id="">方法的重写</h1>
+<p>在对象初始化的时候，我们提到一个疑问：</p>
+<blockquote>
+<p>初始化<code>Person</code>对象的时候，我们所使用的是<code>init</code>方法，但是这样<code>init</code>出来的对象没有自身独有的元素。比如，我们的<code>Person</code>类中，还有姓名、年龄等成员变量根本体现不出来。如果想要对某个人的姓名、年龄赋值，怎么办呢？</p>
+</blockquote>
+<p>当时给出的解决方案是：<a href="how_to_use.html">自定义一个新的init方法，将姓名与年龄当成参数传进去</a>。</p>
+<p>这一节，将提到另一种解决方案：重写init方法。</p>
+<h2 id="init">重写init方法</h2>
+<p>讲到方法的时候，我们就说过，方法是某个对象或者某个类的行为。要有，才能进行调用。我们的<code>Person</code>类并没有定义过<code>alloc</code>与<code>init</code>方法，那为什么可以调用呢？</p>
+<p>其实，是因为这两个方法都是<code>NSObject</code>的，即系统给我们的。因为<code>Person</code>类继承自<code>NSObject</code>，所以它也有了这两个方法。（关于继承，将在下一讲中讲到）。</p>
+<p>系统提供了<code>init</code>方法，那可以不可以改呢？答案是可以的。但是呢不在<code>NSObject</code>里面改，哪个类觉得不够用，哪个类来改。比如，我们这里的<code>Person</code>类觉得，<code>init</code>方法不能初始化姓名、年龄这两个成员，那就由<code>Person</code>类来改。那么这个在子类中修改父类的方法，我们称之为<font color=red><em>重写</em></font>。</p>
 
                     
                     </section>

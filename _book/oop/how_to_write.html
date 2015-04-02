@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="2.1.1" data-basepath=".." data-revision="1427799280254">
+    <div class="book"  data-level="2.1.1" data-basepath=".." data-revision="1427936694254">
     
 
 <div class="book-summary">
@@ -411,9 +411,27 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_17">
+                    <section class="normal" id="section-gitbook_19">
                     
-                        <h1 id="how-to-write">How to write?</h1>
+                        <h1 id="">方法怎么写</h1>
+<h2 id="">方法声明的格式与含义</h2>
+<pre><code>方法类型 (返回值类型)方法名With参数描述:(参数类型)参数名 参数描述:(参数类型)参数名;
+</code></pre><ol>
+<li>在OC中有两种方法，一种以<code>-</code>开头，一种以<code>+</code>开头。<code>-</code>开头为实例方法，用对象来进行调用；<code>+</code>为类方法（静态方法），用类名调用；</li>
+<li>参数的传递使用<code>:</code>来传递；</li>
+<li>方法名和参数描述之间一般用<code>with</code>来进行连接（这只是编码规范）；</li>
+<li>多个参数用<code>空格</code>隔开，然后添加第二个参数描述与参数名；</li>
+<li>方法名一般采用驼峰命名。</li>
+</ol>
+<p>方法的声明：</p>
+<pre><code class="lang-objc">- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age;
+</code></pre>
+<p>方法的实现：</p>
+<pre><code class="lang-objc">- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age {
+
+    <span class="hljs-comment">// 这里写实现内容</span>
+}
+</code></pre>
 
                     
                     </section>

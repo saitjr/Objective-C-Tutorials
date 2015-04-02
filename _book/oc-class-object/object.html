@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="1.4" data-basepath=".." data-revision="1427799280254">
+    <div class="book"  data-level="1.4" data-basepath=".." data-revision="1427936694254">
     
 
 <div class="book-summary">
@@ -411,7 +411,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_7">
+                    <section class="normal" id="section-gitbook_9">
                     
                         <h1 id="">对象</h1>
 <p><a href="class.html">上一讲</a>我们讲到了类，说类是一个抽象的描述。有抽象就有具体，对象就是类的一个具体的表现。</p>
@@ -420,91 +420,34 @@
 <p>程序员从来不缺少对象，因为程序里到处都是对象</p>
 </blockquote>
 <p>当然，这种幽默只有程序员，也只有知道面向对象的程序员才懂。</p>
-<h2 id="mainm">main.m</h2>
-<p>创建完工程以后，系统在main.m中做了些事情，我们一一解析下：</p>
-<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span>           // 引入头文件</span>
-
-<span class="hljs-keyword">int</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[]) {   <span class="hljs-comment">// main函数</span>
-    <span class="hljs-keyword">@autoreleasepool</span> {                      <span class="hljs-comment">// 自动释放池，将在内存管理章节中讲到</span>
-        <span class="hljs-comment">// insert code here...</span>
-        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Hello, World!"</span>);            <span class="hljs-comment">// NSLog输出，字符串使用@""</span>
-    }
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;                               <span class="hljs-comment">// 返回值</span>
-}
-</code></pre>
 <h2 id="">实例化对象</h2>
 <p>从类到对象这个转变，我们有一个专业术语，叫做<em>实例化</em>。</p>
 <ol>
 <li>打开<a href="https://github.com/saitjr/Objective-C-Tutorials-Demo/tree/master/1-OC-Class-Object/Class/ClassDemo" target="_blank">上一讲的工程</a>；</li>
-<li>在main.m文件中引入person类的头<code>#import &quot;Person.h&quot;</code>（为什么使用<code>#import</code>而不使用<code>#include</code>，请见文章<a href="http://www.brighttj.com/ios/oc-include-import-class-difference.html" target="_blank">#include、#import和@class区别</a>）；</li>
-<li>然后实例化Person类，并用临时变量person1去接收<code>Person *person1 = [[Person alloc] init];</code></li>
+<li>在main.m文件中引入Person类的头<code>#import &quot;Person.h&quot;</code>（自定义头文件使用<code>&quot;&quot;</code>引入）；</li>
+<li>然后实例化Person类，并用临时变量person1去接收，最终代码如下：</li>
 </ol>
-<p>在实例化这一步中，<code>alloc</code>表示开辟一块内存，<code>init</code>表示初始化这一块内存，然后将初始化完的这块内存的指针，交给指针<code>*person1</code>。<code>person1</code>就是Person类的一个对象。</p>
-<h2 id="">方法的书写</h2>
-<ol>
-<li>在OC中有两种方法，一种以<code>-</code>开头，一种以<code>+</code>开头。<code>-</code>开头为实例方法，用对象来进行调用；<code>+</code>为类方法（静态方法），用类名调用；</li>
-<li>方法使用<code>空格</code>来调用；</li>
-<li>参数的传递使用<code>:</code>来传递；</li>
-<li>方法名和参数描述之间一般用<code>with</code>来进行连接（这只是编码规范）；</li>
-<li>多个参数用<code>空格</code>隔开，然后添加第二个参数描述与参数名；</li>
-<li>方法名一般采用驼峰命名。</li>
-</ol>
-<pre><code>方法类型 (返回值类型)方法名With参数描述:(参数类型)参数名 参数描述:(参数类型)参数名;
-</code></pre><p>方法的声明：</p>
-<pre><code class="lang-objc">- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age;
-</code></pre>
-<p>方法的实现：</p>
-<pre><code class="lang-objc">- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age {
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+<span class="hljs-preprocessor">#import <span class="hljs-title">"Person.h"</span></span>
 
-}
-</code></pre>
-<h2 id="">对象的初始化</h2>
-<p>刚才初始化Person对象的时候，我们所使用的是<code>init</code>方法，但是这个<code>init</code>方法是属于<code>NSObject</code>的，对于Person来讲，它有姓名、年龄这些独有的成员变量，那么我们想要在初始化它的时候，就给这个对象相应的姓名、年龄应该怎么办呢？</p>
-<p>对于这个需求，有两种解决方案：</p>
-<ol>
-<li>重写<code>init</code>方法；</li>
-<li>自定义初始化方法；</li>
-</ol>
-<h4 id="init">重写<code>init</code>方法：</h4>
-<p>重写方法有一个几乎固定的格式，打开.m文件：</p>
-<pre><code class="lang-objc">- (instancetype)init {
+<span class="hljs-keyword">int</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[]) {
+    <span class="hljs-keyword">@autoreleasepool</span> {
+        <span class="hljs-comment">// insert code here...</span>
 
-    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init]; <span class="hljs-comment">// 通过父类的init方法，去初始化一个对象</span>
+        <span class="hljs-comment">// 实例化Person，实例化的对象为person1</span>
+        <span class="hljs-comment">// 关于方法的书写与调用，将在Function一讲中讲到</span>
 
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>) {
+        <span class="hljs-comment">// 首先需要使用alloc方法，开辟一块堆内存</span>
+        Person *person1 = [Person alloc];
 
-        <span class="hljs-comment">// 需要添加的特性</span>
-        _name = <span class="hljs-string">@"tangjr"</span>; <span class="hljs-comment">// @""表示字符串对象</span>
-        _age = <span class="hljs-number">10</span>;
-        _height = <span class="hljs-number">160.2</span>;
+        <span class="hljs-comment">// 然后使用init方法对这块内存进行初始化</span>
+        person1 = [person1 init];
+
+        <span class="hljs-comment">// 上面两个步骤合并到一起：开辟并初始化内存</span>
+        Person *person1 = [[Person alloc] init];
     }
-
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
-</code></pre>
-<h4 id="">自定义初始化方法</h4>
-<p>重写<code>init</code>方法的弊端是：每一个对象的信息都一样。这明显不是我们想要的，所以，对于每个对象都不同的信息，我们给出一个能自定义信息的初始化方法。</p>
-<p>首先在.h的<code>@interface</code>内部声明方法（如果不声明，则外则不可访问）：</p>
-<pre><code class="lang-objc">- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age height:(<span class="hljs-keyword">float</span>)height;
-</code></pre>
-<p>然后在.m中进行实现：</p>
-<pre><code class="lang-objc">- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age height:(<span class="hljs-keyword">float</span>)height {
-
-    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
-
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>) {
-
-        <span class="hljs-comment">// 需要添加的特性</span>
-        _name = name;
-        _age = age;
-        _height = height;
-    }
-
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
-}
-</code></pre>
-<p>那么这个时候，我们在main.m中的Person初始化方法也需要修改：</p>
-<pre><code class="lang-objc">Person *person2 = [[Person alloc] initWithName:<span class="hljs-string">@"tangjr"</span> age:<span class="hljs-number">10</span> height:<span class="hljs-number">100</span>];
 </code></pre>
 
                     

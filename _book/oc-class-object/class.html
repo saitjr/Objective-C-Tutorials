@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="1.3" data-basepath=".." data-revision="1427799280254">
+    <div class="book"  data-level="1.3" data-basepath=".." data-revision="1427936694254">
     
 
 <div class="book-summary">
@@ -411,15 +411,15 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_5">
+                    <section class="normal" id="section-gitbook_7">
                     
                         <h1 id="">类</h1>
 <h2 id="">概念</h2>
 <blockquote>
 <p>对一类物体的抽象描述</p>
 </blockquote>
-<p>可以看出<em>类</em> 是一个抽象的存在，如：人、动物、电脑。他们都只是一个名称而已，没有具体的指向。</p>
-<h3 id="xcode">在Xcode中创建工程</h3>
+<p>可以看出<em>类</em> 是一个抽象的存在，如：人、动物、电脑。他们都只是一个名称而已，没有具体的指向某个物体。</p>
+<h2 id="xcodeoc">在Xcode中创建OC工程</h2>
 <p>1.打开Xcode，选择Create a new Xcode project</p>
 <image src="./images/class-1.png" width="400px" />
 
@@ -430,12 +430,30 @@
 <image src="./images/class-3.png" width="400px" />
 
 <p>4.选择项目保存路径，然后创建</p>
-<h3 id="xcode">在Xcode中创建类</h3>
+<h2 id="mainm">main.m</h2>
+<p>以前创建的C语言程序都是已.c与.h结尾的，但是OC是.m与.h结尾。创建完工程以后，系统在main.m中做了些事情，我们一一解释下：</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span>           // 引入头文件</span>
+
+<span class="hljs-keyword">int</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[]) {   <span class="hljs-comment">// main函数</span>
+    <span class="hljs-keyword">@autoreleasepool</span> {                      <span class="hljs-comment">// 自动释放池，将在内存管理章节中讲到</span>
+        <span class="hljs-comment">// insert code here...</span>
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Hello, World!"</span>);            <span class="hljs-comment">// NSLog输出，字符串使用@""</span>
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;                               <span class="hljs-comment">// 返回值</span>
+}
+</code></pre>
+<p>其中<code>NSLog</code>也支持像<code>printf</code>一样使用占位符来输出，在NSLog进行输出的时候，整型占位符除了<code>%d</code>还可以是<code>%i</code>。</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"输出一个整型:%i, 浮点型:%f"</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10.1</span>);
+</code></pre>
+<h3 id="import">#import</h3>
+<p>OC中有三种引入文件的方式，分别是：<code>#import</code>，<code>#include</code>，<code>@class</code>，关于他们之间的区别，详见：
+<a href="http://www.brighttj.com/ios/oc-include-import-class-difference.html" target="_blank">#include、#import和@class区别</a>。</p>
+<h2 id="xcode">在Xcode中创建类</h2>
 <p>1.选中工程目录中的main.m，然后快捷键Command+N（表示在main.m的下面创建一个新文件）；</p>
 <p>2.选择OS X -&gt; Source的Cocoa Class</p>
 <image src="./images/class-4.png" width="400px" />
 
-<p>3.填写类名，并将NSObject作为父类</p>
+<p>3.填写类名，并将NSObject作为父类<font color=red>（注意：类名首字母大写，并采用驼峰命名）</font></p>
 <image src="./images/class-5.png" width="400px" />
 
 <p>4.保存路径不用修改，直接创建</p>
@@ -453,6 +471,22 @@
 <p><code>@implementation Person</code>的含义为：Person类的实现</p>
 </blockquote>
 <p>两个关键字都必须和<code>@end</code>成对出现，表示声明/实现的结束。</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Person</span> : <span class="hljs-title">NSObject</span></span>
+
+<span class="hljs-comment">// 内容写在@interface与@end之间</span>
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">"Person.h"</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">Person</span></span>
+
+<span class="hljs-comment">// 内容写在@implementation与@end之间</span>
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
 <h2 id="">类的简介</h2>
 <p>关于类的简介，有几个概念不得不提：</p>
 <ol>
@@ -462,14 +496,14 @@
 </ol>
 <h2 id="">成员变量的定义</h2>
 <p>之前讲到了结构体中变量的定义，类中成员变量的定义如下（<font color=red>注意：是在.h文件中定义</font>）：</p>
-<pre><code class="lang-objective-c">@interface Person : NSObject {
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Person</span> : <span class="hljs-title">NSObject</span> </span>{
 
-    NSString *_name; // NSString是OC中的字符串
-    NSInteger _age;  // NSInteger是OC中的整型，64位下是long，其他情况下是int
-    float _height;
+    <span class="hljs-built_in">NSString</span> *_name; <span class="hljs-comment">// NSString是OC中的字符串</span>
+    <span class="hljs-built_in">NSInteger</span> _age;  <span class="hljs-comment">// NSInteger是OC中的整型，64位下是long，其他情况下是int</span>
+    <span class="hljs-keyword">float</span> _height;
 }
 
-@end
+<span class="hljs-keyword">@end</span>
 </code></pre>
 <p>在写代码的时候，应该时刻注意编码规范。在Cocoa编码规范中，成员变量在定义时，名称前需要加上<code>_</code>下划线。</p>
 <p>在上面这个例子中，因为<code>NSString</code>是OC中的类，name为对象，所以需要写成<code>*_name</code>，而<code>NSInteger</code>其实是<code>typedef long NSInteger;</code>基本类型，所以写为<code>_age</code>。</p>

@@ -16,5 +16,4 @@
    * [Extends](oop/extends.md)
    * [Self-Super](oop/self-super.md)
    * [Homework](oop/homework.md)
-       * [123](oop/123.md)
 

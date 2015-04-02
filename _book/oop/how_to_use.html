@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="2.1.2" data-basepath=".." data-revision="1427799280254">
+    <div class="book"  data-level="2.1.2" data-basepath=".." data-revision="1427936694254">
     
 
 <div class="book-summary">
@@ -411,9 +411,69 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_16">
+                    <section class="normal" id="section-gitbook_18">
                     
-                        <h1 id="how-to-use">How to use?</h1>
+                        <h1 id="">方法的使用与调用</h1>
+<h2 id="">方法的调用</h2>
+<p>在初始化Person对象的时候，我们使用到了以下代码：</p>
+<pre><code class="lang-objc">Person *person1 = [Person alloc];
+person1 = [person1 init];
+</code></pre>
+<p>按住command键，点击<code>alloc</code>可以进入到NSObject的头文件中，找到<code>alloc</code>与<code>init</code>方法的声明：</p>
+<pre><code class="lang-objc">+ (instancetype)alloc;     <span class="hljs-comment">// 开辟内存</span>
+- (instancetype)init;          <span class="hljs-comment">// 初始内存</span>
+</code></pre>
+<ol>
+<li>方法使用<code>空格</code>来调用；</li>
+<li><code>+</code>方式使用类名进行调用，如这里的<code>[Person alloc]</code>；</li>
+<li><code>-</code>方式使用对象进行调用，如这里的<code>[person1 init]</code>。</li>
+</ol>
+<h2 id="">对象的初始化</h2>
+<p>刚才初始化<code>Person</code>对象的时候，我们所使用的是<code>init</code>方法，但是这样<code>init</code>出来的对象没有自身独有的元素。比如，我们的<code>Person</code>类中，还有姓名、年龄等成员变量根本体现不出来。如果想要对某个人的姓名、年龄赋值，怎么办呢？</p>
+<h4 id="">自定义初始化方法</h4>
+<p>首先在.h的<code>@interface</code>内部声明方法（如果不声明，则外则不可访问）：</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Person</span> : <span class="hljs-title">NSObject</span> </span>{
+
+    <span class="hljs-built_in">NSString</span> *_name;
+    <span class="hljs-built_in">NSInteger</span> _age;
+    <span class="hljs-keyword">float</span> _height;
+}
+
+<span class="hljs-comment">// 注意这里的编码规范，先定义成员变量，然后换行再声明方法</span>
+- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age height:(<span class="hljs-keyword">float</span>)height;
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>然后在.m中进行实现：</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">"Person.h"</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">Person</span></span>
+
+- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age height:(<span class="hljs-keyword">float</span>)height {
+
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>) {
+
+        <span class="hljs-comment">// 需要添加的特性</span>
+        _name = name;
+        _age = age;
+        _height = height;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>那么这个时候，我们在main.m中的Person初始化方法也需要修改：</p>
+<pre><code class="lang-objc">Person *person2 = [[Person alloc] initWithName:<span class="hljs-string">@"tangjr"</span> age:<span class="hljs-number">10</span> height:<span class="hljs-number">100</span>];
+</code></pre>
+<h2 id="description">description方法</h2>
+<p>当使用NSLog打印对象信息的时候，系统会走该对象的description方法。</p>
+<p>比如这里，我们想要输出<code>person2</code>这个人的信息，就可以通过重写description来实现。</p>
 
                     
                     </section>
