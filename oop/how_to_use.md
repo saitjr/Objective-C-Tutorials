@@ -73,6 +73,25 @@ person1 = [person1 init];
 
 ```
 
+在自定义初始化方法的时候，一定要注意一下几点：
+
+1. 方法名必须是`initWith`开头，注意大小写；
+2. 每个init方法的基本结构如下：
+
+```objc
+- (instancetype)initWithXxx:(NSString *)xxx {
+
+    self = [super init];
+
+    if (self) {
+
+        // 需要添加的特性
+    }
+	return self;
+}
+
+```
+
 那么这个时候，我们在main.m中的Person初始化方法也需要修改：
 
 ```objc
