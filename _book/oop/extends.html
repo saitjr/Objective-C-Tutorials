@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="2.2" data-basepath=".." data-revision="1427936694254">
+    <div class="book"  data-level="2.2" data-basepath=".." data-revision="1428323343262">
     
 
 <div class="book-summary">
@@ -317,6 +317,204 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="2.5" data-path="oop/polymorphismmd.html">
+            
+                
+                    <a href="../oop/polymorphismmd.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         Polymorphism
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="data-types/README.html">
+            
+                
+                    <a href="../data-types/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Data-Types
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="data-types/bool.html">
+            
+                
+                    <a href="../data-types/bool.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         BOOL
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="data-types/nsstring.html">
+            
+                
+                    <a href="../data-types/nsstring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         NSString
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="data-types/nsmutablestring.html">
+            
+                
+                    <a href="../data-types/nsmutablestring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         NSMutableString
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="data-types/nsnumber.html">
+            
+                
+                    <a href="../data-types/nsnumber.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         NSNumber
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="data-types/nsvalue.html">
+            
+                
+                    <a href="../data-types/nsvalue.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         NSValue
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="data-types/nsdictionary.html">
+            
+                
+                    <a href="../data-types/nsdictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         NSDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="data-types/nsmutabledictionary.html">
+            
+                
+                    <a href="../data-types/nsmutabledictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                         NSMutableDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.8" data-path="data-types/nsarray.html">
+            
+                
+                    <a href="../data-types/nsarray.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         NSArray
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9" data-path="data-types/nsmutablearray.html">
+            
+                
+                    <a href="../data-types/nsmutablearray.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                         NSMutableArray
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.10" data-path="data-types/nsset.html">
+            
+                
+                    <a href="../data-types/nsset.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                         NSSet
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -411,9 +609,187 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_13">
+                    <section class="normal" id="section-gitbook_138">
                     
-                        <h1 id="extends">Extends</h1>
+                        <h1 id="">继承</h1>
+<blockquote>
+<p>继承是面向对象最显著的一个特性。继承是从已有的类中派生出新的类，新的类能吸收已有类的数据属性和行为，并能扩展新的能力。</p>
+</blockquote>
+<h2 id="">为什么有继承</h2>
+<p>假设现在有两个类，分别是教师类与学生类，定义如下：</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Teacher</span> : <span class="hljs-title">NSObject</span> </span>{
+
+    <span class="hljs-built_in">NSString</span> *_name;
+    <span class="hljs-built_in">NSInteger</span> _age;
+    <span class="hljs-keyword">float</span> _height;
+    <span class="hljs-keyword">float</span> _salary;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Student</span> : <span class="hljs-title">NSObject</span> </span>{
+
+    <span class="hljs-built_in">NSString</span> *_name;
+    <span class="hljs-built_in">NSInteger</span> _age;
+    <span class="hljs-keyword">float</span> _height;
+    <span class="hljs-keyword">float</span> _score;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>不难看出，学生类与教师类都有姓名、年龄与身高。那么，可不可以想一个办法，把这些都有的成员提取（抽象）出来，作为一个类，然后让学生和教师都引入就行了呢？答案是，可以的，使用继承就行。</p>
+<h2 id="">怎么继承</h2>
+<p>对于上面的问题，我们需要使用到继承。</p>
+<ol>
+<li>对于<code>Student</code>与<code>Teacher</code>两个类来说，首先要找到共有的部分（即姓名、年龄、身高）；</li>
+<li>然后他们都是属于<code>人类</code>的；</li>
+<li>那么我们就可以<font color=red>抽象</font>出一个人类，然后让<code>Teacher</code>与<code>Student</code>来继承它。</li>
+</ol>
+<p>首先，人类的定义：</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Person</span> : <span class="hljs-title">NSObject</span> </span>{
+
+    <span class="hljs-built_in">NSString</span> *_name;
+    <span class="hljs-built_in">NSInteger</span> _age;
+    <span class="hljs-keyword">float</span> _height;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>然后，学生有自己独有的成员变量，叫做<code>_score</code>，写法如下：</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+<span class="hljs-preprocessor">#import <span class="hljs-title">"Person.h"</span></span>
+
+<span class="hljs-comment">// 注意：继承关系变成了Student继承自Person</span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Student</span> : <span class="hljs-title">Person</span> </span>{
+
+    <span class="hljs-keyword">float</span> _score;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>教师类也有独有的成员变量，叫做<code>_salary</code>，写法如下：</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+<span class="hljs-preprocessor">#import <span class="hljs-title">"Person.h"</span></span>
+
+<span class="hljs-comment">// 注意：继承关系变成了Teacher继承自Person</span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Teacher</span> : <span class="hljs-title">Person</span> </span>{
+
+    <span class="hljs-keyword">float</span> _salary;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="">继承与方法</h2>
+<p>与上面使用继承的原因相同，对于人类来说，有自己的初始化方法，比如直接自定义init方法来初始化成员变量，Person类中的定义与实现如下：</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Person</span> : <span class="hljs-title">NSObject</span> </span>{
+
+    <span class="hljs-built_in">NSString</span> *_name;
+    <span class="hljs-built_in">NSInteger</span> _age;
+    <span class="hljs-keyword">float</span> _height;
+}
+
+- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age height:(<span class="hljs-keyword">float</span>)height;
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">"Person.h"</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">Person</span></span>
+
+- (instancetype)initWithName:(<span class="hljs-built_in">NSString</span> *)name age:(<span class="hljs-built_in">NSInteger</span>)age height:(<span class="hljs-keyword">float</span>)height {
+
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>) {
+
+        _name = name;
+        _age = age;
+        _height = height;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>同样，因为<code>Student</code>与<code>Teacher</code>继承自<code>Person</code>，所以他们也可以直接调用自定义init方法来进行对象的初始化。</p>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+<span class="hljs-preprocessor">#import <span class="hljs-title">"Person.h"</span></span>
+<span class="hljs-preprocessor">#import <span class="hljs-title">"Student.h"</span></span>
+<span class="hljs-preprocessor">#import <span class="hljs-title">"Teacher.h"</span></span>
+
+<span class="hljs-keyword">int</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[]) {
+    <span class="hljs-keyword">@autoreleasepool</span> {
+        <span class="hljs-comment">// insert code here...</span>
+
+        Person *person = [[Person alloc] initWithName:<span class="hljs-string">@"A"</span> age:<span class="hljs-number">0</span> height:<span class="hljs-number">10</span>];
+        Teacher *teacher = [[Teacher alloc] initWithName:<span class="hljs-string">@"B"</span> age:<span class="hljs-number">3</span> height:<span class="hljs-number">12</span>];
+        Student *student = [[Student alloc] initWithName:<span class="hljs-string">@"C"</span> age:<span class="hljs-number">5</span> height:<span class="hljs-number">16</span>];
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="">访问权限修饰符</h2>
+<blockquote>
+<p>权限修饰符是用来修饰实例变量的，用来控制实例变量的访问权限。</p>
+</blockquote>
+<p>常用的访问权限修饰符有：<code>@public</code>，<code>@protected</code>，<code>@private</code>，区别如下：</p>
+<table>
+<thead>
+<tr>
+<th>修饰符名称</th>
+<th>修饰后的变量作用域</th>
+<th>其他说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@public</td>
+<td>所有地方都能访问</td>
+<td>少用，容易破坏封装性</td>
+</tr>
+<tr>
+<td>@protected</td>
+<td>在本类中与子类中可以访问</td>
+<td>系统默认为@protected权限</td>
+</tr>
+<tr>
+<td>@private</td>
+<td>只能在本来中访问，不能继承给子类</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="">修饰符的使用</h3>
+<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Person</span> : <span class="hljs-title">NSObject</span> </span>{
+
+    <span class="hljs-comment">// 表示_name与_age两个成员变量是公开的，任何地方都可以访问</span>
+    <span class="hljs-keyword">@public</span>
+    <span class="hljs-built_in">NSString</span> *_name;
+    <span class="hljs-built_in">NSInteger</span> _age;
+
+    <span class="hljs-comment">// 表示_height成员变量是私有的，只有自己访问，不能被继承</span>
+    <span class="hljs-keyword">@private</span>
+    <span class="hljs-keyword">float</span> _height;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="">继承注意事项</h2>
+<ol>
+<li>OC中的继承为<font color=red>单继承</font>，也就是说，一个子类，只能有一个父类；</li>
+<li>被继承的类成为<font color=red>父类（或超类）</font>，继承其他类的类，称为<font color=red>子类</font>。</li>
+</ol>
 
                     
                     </section>

@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="2.1.3" data-basepath=".." data-revision="1427936694254">
+    <div class="book"  data-level="2.1.3" data-basepath=".." data-revision="1428323343262">
     
 
 <div class="book-summary">
@@ -317,6 +317,204 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="2.5" data-path="oop/polymorphismmd.html">
+            
+                
+                    <a href="../oop/polymorphismmd.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         Polymorphism
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="data-types/README.html">
+            
+                
+                    <a href="../data-types/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Data-Types
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="data-types/bool.html">
+            
+                
+                    <a href="../data-types/bool.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         BOOL
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="data-types/nsstring.html">
+            
+                
+                    <a href="../data-types/nsstring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         NSString
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="data-types/nsmutablestring.html">
+            
+                
+                    <a href="../data-types/nsmutablestring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         NSMutableString
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="data-types/nsnumber.html">
+            
+                
+                    <a href="../data-types/nsnumber.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         NSNumber
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="data-types/nsvalue.html">
+            
+                
+                    <a href="../data-types/nsvalue.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         NSValue
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="data-types/nsdictionary.html">
+            
+                
+                    <a href="../data-types/nsdictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         NSDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="data-types/nsmutabledictionary.html">
+            
+                
+                    <a href="../data-types/nsmutabledictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                         NSMutableDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.8" data-path="data-types/nsarray.html">
+            
+                
+                    <a href="../data-types/nsarray.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         NSArray
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9" data-path="data-types/nsmutablearray.html">
+            
+                
+                    <a href="../data-types/nsmutablearray.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                         NSMutableArray
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.10" data-path="data-types/nsset.html">
+            
+                
+                    <a href="../data-types/nsset.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                         NSSet
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -411,7 +609,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_17">
+                    <section class="normal" id="section-gitbook_143">
                     
                         <h1 id="">方法的重写</h1>
 <p>在对象初始化的时候，我们提到一个疑问：</p>
@@ -424,7 +622,45 @@
 <p>讲到方法的时候，我们就说过，方法是某个对象或者某个类的行为。要有，才能进行调用。我们的<code>Person</code>类并没有定义过<code>alloc</code>与<code>init</code>方法，那为什么可以调用呢？</p>
 <p>其实，是因为这两个方法都是<code>NSObject</code>的，即系统给我们的。因为<code>Person</code>类继承自<code>NSObject</code>，所以它也有了这两个方法。（关于继承，将在下一讲中讲到）。</p>
 <p>系统提供了<code>init</code>方法，那可以不可以改呢？答案是可以的。但是呢不在<code>NSObject</code>里面改，哪个类觉得不够用，哪个类来改。比如，我们这里的<code>Person</code>类觉得，<code>init</code>方法不能初始化姓名、年龄这两个成员，那就由<code>Person</code>类来改。那么这个在子类中修改父类的方法，我们称之为<font color=red><em>重写</em></font>。</p>
+<ol>
+<li><font color=red>重写方法，不需要再在.h文件中进行声明，直接在.m文件中实现即可；</font></li>
+<li><font color=red>既然是重写，父类必须要有这个方法，而且必须公开（即方法在父类的.h中声明过）；</font></li>
+<li><font color=red>重写时，只能修改方法的实现。方法类型、返回值、方法名、参数全都不能修改。</font>
 
+</li>
+</ol>
+<pre><code class="lang-objc">- (instancetype)init {
+
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>) {
+
+        _name = <span class="hljs-string">@"Karen"</span>;
+        _age = <span class="hljs-number">1</span>;
+        _height = <span class="hljs-number">0.5</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+</code></pre>
+<p>这时，我们再调用<code>init</code>方法，就不仅仅是走<code>NSObject</code>的方法了，还会走重写过后的<code>init</code>方法。所以，输出<code>_age</code>与<code>_height</code>的值就是1与0.5。</p>
+<pre><code class="lang-objc">Person *person1 = [[Person alloc] init];
+</code></pre>
+<h2 id="description">重写description方法</h2>
+<p>之前讲解到，要打印对象，<code>NSLog</code>中需要使用<code>%@</code>。既然如此，<code>person1</code>也是对象，也可以使用<code>%@</code>输出。</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%@"</span>, person1);
+</code></pre>
+<p>控制台打印了对象的地址：</p>
+<pre><code>2015-04-02 22:48:42.890 test2[422:10156] &lt;Person: 0x10020da60&gt;
+</code></pre><p>现在我想要<code>NSLog</code>对象的时候，控制台输出这个人的名字，就需要重写description方法，实现如下：</p>
+<pre><code class="lang-objc">- (<span class="hljs-built_in">NSString</span> *)description {
+
+    <span class="hljs-comment">// 注意：_name这里的参数，一定不能换成self，会造成循环调用</span>
+    <span class="hljs-keyword">return</span> [<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@"姓名：%@"</span>, _name];
+}
+</code></pre>
+<p>这时再输出，控制台打印：</p>
+<pre><code>2015-04-02 22:54:15.527 test2[473:12684] 姓名：Karen
+</code></pre>
                     
                     </section>
                 

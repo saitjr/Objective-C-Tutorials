@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Class | 写在开头</title>
+        <title>BOOL | 写在开头</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../oc-class-object/object.html" />
+    <link rel="next" href="../data-types/nsstring.html" />
     
     
-    <link rel="prev" href="../oc-class-object/oop.html" />
+    <link rel="prev" href="../data-types/README.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="1.3" data-basepath=".." data-revision="1428323343262">
+    <div class="book"  data-level="3.1" data-basepath=".." data-revision="1428323343262">
     
 
 <div class="book-summary">
@@ -114,7 +114,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1.3" data-path="oc-class-object/class.html">
+        <li class="chapter " data-level="1.3" data-path="oc-class-object/class.html">
             
                 
                     <a href="../oc-class-object/class.html">
@@ -356,7 +356,7 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="data-types/bool.html">
+        <li class="chapter active" data-level="3.1" data-path="data-types/bool.html">
             
                 
                     <a href="../data-types/bool.html">
@@ -609,102 +609,54 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_133">
+                    <section class="normal" id="section-gitbook_126">
                     
-                        <h1 id="">类</h1>
-<h2 id="">概念</h2>
-<blockquote>
-<p>对一类物体的抽象描述</p>
-</blockquote>
-<p>可以看出<em>类</em> 是一个抽象的存在，如：人、动物、电脑。他们都只是一个名称而已，没有具体的指向某个物体。</p>
-<h2 id="xcodeoc">在Xcode中创建OC工程</h2>
-<p>1.打开Xcode，选择Create a new Xcode project</p>
-<image src="./images/class-1.png" width="400px" />
+                        <h1 id="bool">BOOL</h1>
+<p>布尔类型</p>
+<p>很多语言都有布尔值类型，有的关键字为<code>boolean</code>、有的为<code>bool</code>，表示方式为<code>true</code>、<code>false</code>。</p>
+<p>在OC中，布尔类型的关键字为<font color=red>大写</font>的<code>BOOL</code>，表示方式为<code>YES</code>、<code>NO</code>。</p>
+<h2 id="">使用方式</h2>
+<p>BOOL类型一般用于表示真假、是否这种情况，如iOS开发中的按钮是否选中、排序是否提前完成等。表示方式如下：</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">BOOL</span> isSelected = <span class="hljs-literal">NO</span>;
 
-<p>2.选择创建一个OS X的Application -&gt; Commad Line Tool工程</p>
-<image src="./images/class-2.png" width="400px" />
+<span class="hljs-comment">// 判断方式</span>
+<span class="hljs-keyword">if</span> (isSelected) {
 
-<p>3.填写相关工程信息</p>
-<image src="./images/class-3.png" width="400px" />
-
-<p>4.选择项目保存路径，然后创建</p>
-<h2 id="mainm">main.m</h2>
-<p>以前创建的C语言程序都是已.c与.h结尾的，但是OC是.m与.h结尾。创建完工程以后，系统在main.m中做了些事情，我们一一解释下：</p>
-<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span>           // 引入头文件</span>
-
-<span class="hljs-keyword">int</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[]) {   <span class="hljs-comment">// main函数</span>
-    <span class="hljs-keyword">@autoreleasepool</span> {                      <span class="hljs-comment">// 自动释放池，将在内存管理章节中讲到</span>
-        <span class="hljs-comment">// insert code here...</span>
-        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Hello, World!"</span>);            <span class="hljs-comment">// NSLog输出，字符串使用@""</span>
-    }
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;                               <span class="hljs-comment">// 返回值</span>
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"选中"</span>);
 }
 </code></pre>
-<p>其中<code>NSLog</code>也支持像<code>printf</code>一样使用占位符来输出，在NSLog进行输出的时候，整型占位符除了<code>%d</code>还可以是<code>%i</code>。</p>
-<pre><code class="lang-objc"><span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"输出一个整型:%i, 浮点型:%f"</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10.1</span>);
+<h2 id="">深入理解</h2>
+<p>当在xcode中输入BOOL时，编译器还联想出了<code>BOOL</code>、<code>bool</code>、<code>Boolean</code>、<code>boolean_t</code>等类型，我们来一一分析下。</p>
+<h3 id="bool">BOOL</h3>
+<p>头文件：<code>objc.h</code></p>
+<p>实际类型：<code>signed char</code></p>
+<p>表示方式：<code>YES</code> \ <code>NO</code></p>
+<p>注意点：<font color=red>当<code>BOOL a == 1</code>的时候，才是YES，其他情况均为NO</font>，所以在使用时，慎用<code>a == YES</code>这种方式。</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">BOOL</span> a = <span class="hljs-number">3</span>;
+<span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%d"</span>, a == <span class="hljs-literal">YES</span>); <span class="hljs-comment">// 输出0</span>
 </code></pre>
-<h3 id="import">#import</h3>
-<p>OC中有三种引入文件的方式，分别是：<code>#import</code>，<code>#include</code>，<code>@class</code>，关于他们之间的区别，详见：
-<a href="http://www.brighttj.com/ios/oc-include-import-class-difference.html" target="_blank">#include、#import和@class区别</a>。</p>
-<h2 id="xcode">在Xcode中创建类</h2>
-<p>1.选中工程目录中的main.m，然后快捷键Command+N（表示在main.m的下面创建一个新文件）；</p>
-<p>2.选择OS X -&gt; Source的Cocoa Class</p>
-<image src="./images/class-4.png" width="400px" />
-
-<p>3.填写类名，并将NSObject作为父类<font color=red>（注意：类名首字母大写，并采用驼峰命名）</font></p>
-<image src="./images/class-5.png" width="400px" />
-
-<p>4.保存路径不用修改，直接创建</p>
-<p>5.创建之后的工程目录为：</p>
-<image src="./images/class-6.png" width="400px" />
-
-<h2 id="">类文件的分析</h2>
-<p>类文件分为两个.h文件与.m文件</p>
-<p>.h为类的声明文件，<code>@interface</code>表示类的接口，<code>:</code>表示继承关系。</p>
+<h3 id="bool">bool</h3>
+<p>头文件：<code>stdbool.h</code></p>
+<p>实际类型：<code>_Bool (int)</code></p>
+<p>表示方式：<code>true</code> \ <code>false</code></p>
+<pre><code class="lang-objc"><span class="hljs-keyword">bool</span> a = <span class="hljs-number">3</span>;
+<span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%d"</span>, a == <span class="hljs-literal">true</span>); <span class="hljs-comment">// 输出1</span>
+</code></pre>
+<h3 id="boolean">Boolean</h3>
+<p>头文件：<code>MacTypes.h</code></p>
+<p>实际类型：<code>unsigned char</code></p>
+<p>表示方式：<code>TRUE</code> \ <code>FALSE</code></p>
+<p>注意：<font color=red>与BOOL的情况相同，仅当a == 1时为TRUE</font></p>
+<pre><code class="lang-objc">Boolean a = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%d"</span>, a == <span class="hljs-literal">TRUE</span>);
+</code></pre>
+<h3 id="boolean_t">boolean_t</h3>
+<p>头文件：<code>boolean.h</code></p>
+<p>实际类型：<code>unsigned int</code></p>
+<p>关于在OC中几种布尔值的区别，可查看这篇在stackoverflow上的回答：</p>
 <blockquote>
-<p><code>@interface Person : NSObject</code>的含义为：声明了一个继承自NSObject类的Person类</p>
+<p><a href="http://stackoverflow.com/questions/14464671/all-kinds-of-booleans-in-objectivec" target="_blank">http://stackoverflow.com/questions/14464671/all-kinds-of-booleans-in-objectivec</a></p>
 </blockquote>
-<p>.m为类的实现文件，<code>@implementation</code>表示类的实现。</p>
-<blockquote>
-<p><code>@implementation Person</code>的含义为：Person类的实现</p>
-</blockquote>
-<p>两个关键字都必须和<code>@end</code>成对出现，表示声明/实现的结束。</p>
-<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">&lt;Foundation/Foundation.h&gt;</span></span>
-
-<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Person</span> : <span class="hljs-title">NSObject</span></span>
-
-<span class="hljs-comment">// 内容写在@interface与@end之间</span>
-
-<span class="hljs-keyword">@end</span>
-</code></pre>
-<pre><code class="lang-objc"><span class="hljs-preprocessor">#import <span class="hljs-title">"Person.h"</span></span>
-
-<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">Person</span></span>
-
-<span class="hljs-comment">// 内容写在@implementation与@end之间</span>
-
-<span class="hljs-keyword">@end</span>
-</code></pre>
-<h2 id="">类的简介</h2>
-<p>关于类的简介，有几个概念不得不提：</p>
-<ol>
-<li>OC只支持单继承（子类只能拥有一个父类）；</li>
-<li>NSObject<font color=red>几乎</font>是所有类的基类（归根结底的那个类）；</li>
-<li>子类能继承父类的<font color=red>公开</font>方法与属性；</li>
-</ol>
-<h2 id="">成员变量的定义</h2>
-<p>之前讲到了结构体中变量的定义，类中成员变量的定义如下（<font color=red>注意：是在.h文件中定义</font>）：</p>
-<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">Person</span> : <span class="hljs-title">NSObject</span> </span>{
-
-    <span class="hljs-built_in">NSString</span> *_name; <span class="hljs-comment">// NSString是OC中的字符串</span>
-    <span class="hljs-built_in">NSInteger</span> _age;  <span class="hljs-comment">// NSInteger是OC中的整型，64位下是long，其他情况下是int</span>
-    <span class="hljs-keyword">float</span> _height;
-}
-
-<span class="hljs-keyword">@end</span>
-</code></pre>
-<p>在写代码的时候，应该时刻注意编码规范。在Cocoa编码规范中，成员变量在定义时，名称前需要加上<code>_</code>下划线。</p>
-<p>在上面这个例子中，因为<code>NSString</code>是OC中的类，name为对象，所以需要写成<code>*_name</code>，而<code>NSInteger</code>其实是<code>typedef long NSInteger;</code>基本类型，所以写为<code>_age</code>。</p>
 
                     
                     </section>
@@ -715,10 +667,10 @@
         </div>
 
         
-        <a href="../oc-class-object/oop.html" class="navigation navigation-prev " aria-label="Previous page: OOP"><i class="fa fa-angle-left"></i></a>
+        <a href="../data-types/README.html" class="navigation navigation-prev " aria-label="Previous page: Data-Types"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../oc-class-object/object.html" class="navigation navigation-next " aria-label="Next page: Object"><i class="fa fa-angle-right"></i></a>
+        <a href="../data-types/nsstring.html" class="navigation navigation-next " aria-label="Next page: NSString"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

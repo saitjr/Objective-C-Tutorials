@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="2.1.2" data-basepath=".." data-revision="1427936694254">
+    <div class="book"  data-level="2.1.2" data-basepath=".." data-revision="1428323343262">
     
 
 <div class="book-summary">
@@ -317,6 +317,204 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="2.5" data-path="oop/polymorphismmd.html">
+            
+                
+                    <a href="../oop/polymorphismmd.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         Polymorphism
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="data-types/README.html">
+            
+                
+                    <a href="../data-types/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Data-Types
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="data-types/bool.html">
+            
+                
+                    <a href="../data-types/bool.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         BOOL
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="data-types/nsstring.html">
+            
+                
+                    <a href="../data-types/nsstring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         NSString
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="data-types/nsmutablestring.html">
+            
+                
+                    <a href="../data-types/nsmutablestring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         NSMutableString
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="data-types/nsnumber.html">
+            
+                
+                    <a href="../data-types/nsnumber.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         NSNumber
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="data-types/nsvalue.html">
+            
+                
+                    <a href="../data-types/nsvalue.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         NSValue
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="data-types/nsdictionary.html">
+            
+                
+                    <a href="../data-types/nsdictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         NSDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="data-types/nsmutabledictionary.html">
+            
+                
+                    <a href="../data-types/nsmutabledictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                         NSMutableDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.8" data-path="data-types/nsarray.html">
+            
+                
+                    <a href="../data-types/nsarray.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         NSArray
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9" data-path="data-types/nsmutablearray.html">
+            
+                
+                    <a href="../data-types/nsmutablearray.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                         NSMutableArray
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.10" data-path="data-types/nsset.html">
+            
+                
+                    <a href="../data-types/nsset.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                         NSSet
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -411,7 +609,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_18">
+                    <section class="normal" id="section-gitbook_144">
                     
                         <h1 id="">方法的使用与调用</h1>
 <h2 id="">方法的调用</h2>
@@ -467,6 +665,22 @@ person1 = [person1 init];
 }
 
 <span class="hljs-keyword">@end</span>
+</code></pre>
+<p>在自定义初始化方法的时候，一定要注意一下几点：</p>
+<ol>
+<li>方法名必须是<code>initWith</code>开头，注意大小写；</li>
+<li>每个init方法的基本结构如下：</li>
+</ol>
+<pre><code class="lang-objc">- (instancetype)initWithXxx:(<span class="hljs-built_in">NSString</span> *)xxx {
+
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>) {
+
+        <span class="hljs-comment">// 需要添加的特性</span>
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
 </code></pre>
 <p>那么这个时候，我们在main.m中的Person初始化方法也需要修改：</p>
 <pre><code class="lang-objc">Person *person2 = [[Person alloc] initWithName:<span class="hljs-string">@"tangjr"</span> age:<span class="hljs-number">10</span> height:<span class="hljs-number">100</span>];
