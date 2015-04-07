@@ -18,7 +18,7 @@
     
     
     
-    <link rel="next" href="../data-types/nsnumber.html" />
+    <link rel="next" href="../data-types/nsvalue.html" />
     
     
     <link rel="prev" href="../data-types/nsstring.html" />
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="3.3" data-basepath=".." data-revision="1428323343262">
+    <div class="book"  data-level="3.3" data-basepath=".." data-revision="1428369757718">
     
 
 <div class="book-summary">
@@ -404,29 +404,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.4" data-path="data-types/nsnumber.html">
-            
-                
-                    <a href="../data-types/nsnumber.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.4.</b>
-                        
-                         NSNumber
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.5" data-path="data-types/nsvalue.html">
+        <li class="chapter " data-level="3.4" data-path="data-types/nsvalue.html">
             
                 
                     <a href="../data-types/nsvalue.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.5.</b>
+                            <b>3.4.</b>
                         
                          NSValue
                     </a>
@@ -436,13 +420,45 @@
         </li>
     
         
-        <li class="chapter " data-level="3.6" data-path="data-types/nsdictionary.html">
+        <li class="chapter " data-level="3.5" data-path="data-types/nsnumber.html">
+            
+                
+                    <a href="../data-types/nsnumber.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         NSNumber
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="data-types/nsnull.html">
+            
+                
+                    <a href="../data-types/nsnull.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         NSNull
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="data-types/nsdictionary.html">
             
                 
                     <a href="../data-types/nsdictionary.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.6.</b>
+                            <b>3.7.</b>
                         
                          NSDictionary
                     </a>
@@ -452,13 +468,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.7" data-path="data-types/nsmutabledictionary.html">
+        <li class="chapter " data-level="3.8" data-path="data-types/nsmutabledictionary.html">
             
                 
                     <a href="../data-types/nsmutabledictionary.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.7.</b>
+                            <b>3.8.</b>
                         
                          NSMutableDictionary
                     </a>
@@ -468,13 +484,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.8" data-path="data-types/nsarray.html">
+        <li class="chapter " data-level="3.9" data-path="data-types/nsarray.html">
             
                 
                     <a href="../data-types/nsarray.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.8.</b>
+                            <b>3.9.</b>
                         
                          NSArray
                     </a>
@@ -484,13 +500,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.9" data-path="data-types/nsmutablearray.html">
+        <li class="chapter " data-level="3.10" data-path="data-types/nsmutablearray.html">
             
                 
                     <a href="../data-types/nsmutablearray.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.9.</b>
+                            <b>3.10.</b>
                         
                          NSMutableArray
                     </a>
@@ -500,13 +516,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.10" data-path="data-types/nsset.html">
+        <li class="chapter " data-level="3.11" data-path="data-types/nsset.html">
             
                 
                     <a href="../data-types/nsset.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.10.</b>
+                            <b>3.11.</b>
                         
                          NSSet
                     </a>
@@ -609,9 +625,46 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_128">
+                    <section class="normal" id="section-gitbook_32">
                     
                         <h1 id="nsmutablestring">NSMutableString</h1>
+<p>可变字符串，继承自<code>NSString</code>。</p>
+<p>之前介绍的<code>NSString</code>为不可变字符串，任何操作都不能在原字符串上进行。而<code>NSMutableString</code>不同，作为可变字符串，可直接对原字符串进行编辑。</p>
+<p>注：因为<code>NSMutableString</code>继承与<code>NSString</code>，所以<code>NSString</code>的方法，<code>NSMutableString</code>依然可用。他们的方法，最大的区别在于，<code>NSString</code>会返回新的字符串，而<code>NSMutableString</code>对原字符串处理，返回<code>void</code>。</p>
+<p>同样，对于<code>NSMutableString</code>也有很多常用方法，本讲将介绍：</p>
+<ul>
+<li><a href="#init">初始化</a></li>
+<li><a href="#append">添加</a> / <a href="#delete">删除</a> / <a href="#update">修改</a></li>
+</ul>
+<p><span id='init'></span></p>
+<h2 id="">初始化</h2>
+<p>使用<code>NSString</code>的几种初始化方法，依然可以对<code>NSMutableString</code>有效，写法如下：</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSMutableString</span> *string1 = [<span class="hljs-built_in">NSMutableString</span> string];
+<span class="hljs-built_in">NSMutableString</span> *string2 = [<span class="hljs-built_in">NSMutableString</span> stringWithFormat:<span class="hljs-string">@"abc"</span>];
+</code></pre>
+<p>下面介绍两种独有的：</p>
+<pre><code class="lang-objc"><span class="hljs-comment">// 给出初始长度，进行字符串的初始化(这个初始长度不用太准确，因为系统分配的内容会随着字符串长度而变动)</span>
+<span class="hljs-built_in">NSMutableString</span> *string3 = [[<span class="hljs-built_in">NSMutableString</span> alloc] initWithCapacity:<span class="hljs-number">4</span>];
+<span class="hljs-built_in">NSMutableString</span> *string4 = [<span class="hljs-built_in">NSMutableString</span> stringWithCapacity:<span class="hljs-number">4</span>];
+</code></pre>
+<p><span id='append'></span></p>
+<h2 id="">添加</h2>
+<pre><code class="lang-objc">[string2 appendString:<span class="hljs-string">@"def"</span>]; <span class="hljs-comment">// 从尾部追加字符串@"def"</span>
+[string2 appendFormat:<span class="hljs-string">@"%d"</span>, <span class="hljs-number">9</span>]; <span class="hljs-comment">// 从尾部格式化追加字符串@"9"</span>
+[string2 insertString:<span class="hljs-string">@"000"</span> atIndex:<span class="hljs-number">0</span>]; <span class="hljs-comment">// 在第0位插入字符串@"000"</span>
+</code></pre>
+<p><span id='delete'></span></p>
+<h2 id="">删除</h2>
+<pre><code class="lang-objc"><span class="hljs-comment">// 从0开始，删除3个字符</span>
+[string2 deleteCharactersInRange:NSMakeRange(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>)];
+</code></pre>
+<p><span id='update'></span></p>
+<h2 id="">修改</h2>
+<pre><code class="lang-objc"><span class="hljs-comment">// 按范围替换</span>
+[string2 replaceCharactersInRange:NSMakeRange(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>) withString:<span class="hljs-string">@"vvv"</span>];
+<span class="hljs-comment">// 完全替换</span>
+[string2 setString:<span class="hljs-string">@"333"</span>];
+</code></pre>
 
                     
                     </section>
@@ -625,7 +678,7 @@
         <a href="../data-types/nsstring.html" class="navigation navigation-prev " aria-label="Previous page: NSString"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../data-types/nsnumber.html" class="navigation navigation-next " aria-label="Next page: NSNumber"><i class="fa fa-angle-right"></i></a>
+        <a href="../data-types/nsvalue.html" class="navigation navigation-next " aria-label="Next page: NSValue"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

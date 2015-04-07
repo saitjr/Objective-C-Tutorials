@@ -170,7 +170,7 @@ BOOL number5      = [@"2" boolValue];     // number5 = YES
 
 对于数字类型的字符串，直接转换就行。
 
-- 对于`intValue`，字符转换为0。如：`[@"abc" intValue] == 0`；
+- 对于`intValue`，转换到字符以前。如：`[@"123ab0c" intValue] == 123`；
 - 对于`boolValue`，以`y`，`Y`，`t`，`T`开头的字符串与结果不为0的数字，转换结果为YES，其余情况为NO。如：`[@"t" boolValue] == YES`，`[@"0" boolValue] == NO`；
 
 还可以将数组转为字符串（将数组的某一个元素，以某个分隔符，拼接成字符串）

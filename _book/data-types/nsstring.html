@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="3.2" data-basepath=".." data-revision="1428323343262">
+    <div class="book"  data-level="3.2" data-basepath=".." data-revision="1428369757718">
     
 
 <div class="book-summary">
@@ -404,29 +404,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.4" data-path="data-types/nsnumber.html">
-            
-                
-                    <a href="../data-types/nsnumber.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.4.</b>
-                        
-                         NSNumber
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.5" data-path="data-types/nsvalue.html">
+        <li class="chapter " data-level="3.4" data-path="data-types/nsvalue.html">
             
                 
                     <a href="../data-types/nsvalue.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.5.</b>
+                            <b>3.4.</b>
                         
                          NSValue
                     </a>
@@ -436,13 +420,45 @@
         </li>
     
         
-        <li class="chapter " data-level="3.6" data-path="data-types/nsdictionary.html">
+        <li class="chapter " data-level="3.5" data-path="data-types/nsnumber.html">
+            
+                
+                    <a href="../data-types/nsnumber.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         NSNumber
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="data-types/nsnull.html">
+            
+                
+                    <a href="../data-types/nsnull.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         NSNull
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="data-types/nsdictionary.html">
             
                 
                     <a href="../data-types/nsdictionary.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.6.</b>
+                            <b>3.7.</b>
                         
                          NSDictionary
                     </a>
@@ -452,13 +468,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.7" data-path="data-types/nsmutabledictionary.html">
+        <li class="chapter " data-level="3.8" data-path="data-types/nsmutabledictionary.html">
             
                 
                     <a href="../data-types/nsmutabledictionary.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.7.</b>
+                            <b>3.8.</b>
                         
                          NSMutableDictionary
                     </a>
@@ -468,13 +484,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.8" data-path="data-types/nsarray.html">
+        <li class="chapter " data-level="3.9" data-path="data-types/nsarray.html">
             
                 
                     <a href="../data-types/nsarray.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.8.</b>
+                            <b>3.9.</b>
                         
                          NSArray
                     </a>
@@ -484,13 +500,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.9" data-path="data-types/nsmutablearray.html">
+        <li class="chapter " data-level="3.10" data-path="data-types/nsmutablearray.html">
             
                 
                     <a href="../data-types/nsmutablearray.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.9.</b>
+                            <b>3.10.</b>
                         
                          NSMutableArray
                     </a>
@@ -500,13 +516,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.10" data-path="data-types/nsset.html">
+        <li class="chapter " data-level="3.11" data-path="data-types/nsset.html">
             
                 
                     <a href="../data-types/nsset.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.10.</b>
+                            <b>3.11.</b>
                         
                          NSSet
                     </a>
@@ -609,7 +625,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_130">
+                    <section class="normal" id="section-gitbook_41">
                     
                         <h1 id="nsstring">NSString</h1>
 <p>字符串类型</p>
@@ -640,17 +656,17 @@
 <p>因为NSString为不可变字符串，所以所有的操作都不会对原字符串进行修改，而是返回新的字符串。</p>
 <ul>
 <li><a href="#init">初始化</a></li>
-<li><a href="#append">拼接</a> / <a href="#sub">截取</a> / <a href="#search">查询</a> / <a href="#replace">替换</a></li>
+<li><a href="#append">拼接</a> / <a href="#sub">截取</a> / <a href="#search">查找</a> / <a href="#replace">替换</a></li>
 <li><a href="#length">获得长度</a></li>
 <li><a href="#compare">字符串比较</a></li>
-<li>转换为基本类型</li>
-<li>转换为其他类型</li>
-<li>获得某个字符</li>
+<li><a href="#transform">转换类型</a></li>
+<li><a href="#upper-lower">转大小写</a></li>
 </ul>
 <h2 id="">常量字符串</h2>
 <pre><code class="lang-objc"><span class="hljs-built_in">NSString</span> *string = <span class="hljs-string">@"This is a string"</span>;
 </code></pre>
-<h2 id="span-idinitspan">初始化<span id='init'></span></h2>
+<p><span id='init'></span></p>
+<h2 id="">初始化</h2>
 <pre><code class="lang-objc"><span class="hljs-comment">// 实例方法</span>
 <span class="hljs-built_in">NSString</span> *string1 = [[<span class="hljs-built_in">NSString</span> alloc] initWithString:string];
 <span class="hljs-built_in">NSString</span> *string2 = [[<span class="hljs-built_in">NSString</span> alloc] initWithFormat:<span class="hljs-string">@"格式化初始化%d"</span>, <span class="hljs-number">5</span>];
@@ -659,7 +675,8 @@
 <span class="hljs-built_in">NSString</span> *string3 = [<span class="hljs-built_in">NSString</span> stringWithString:string]; <span class="hljs-comment">// 与initWithString类似</span>
 <span class="hljs-built_in">NSString</span> *string4 = [<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@"%d"</span>, <span class="hljs-number">5</span>]; <span class="hljs-comment">// 这种方式用得最多</span>
 </code></pre>
-<h2 id="span-idappendspan">拼接<span id='append'></span></h2>
+<p><span id='append'></span></p>
+<h2 id="">拼接</h2>
 <p>可直接利用<code>stringWithFormat</code>初始化方法来进行拼接。</p>
 <pre><code class="lang-objc"><span class="hljs-built_in">NSString</span> *string5 = [<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@"%@%@"</span>, string3, string4];
 </code></pre>
@@ -685,11 +702,13 @@
 <span class="hljs-comment">// 按范围截取，NSMakeRange需要两个参数，一个是起始位置，一个是长度</span>
 <span class="hljs-built_in">NSString</span> *string10 = [string4 substringWithRange:NSMakeRange(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>)];
 </code></pre>
-<h2 id="span-idsearchspan">查询<span id='search'></span></h2>
-<p>查询分为两种：</p>
+<p><span id='search'></span></p>
+<h2 id="">查找</h2>
+<p>查询分为三种：</p>
 <ol>
 <li>查看字符串是否以xxx开头，或是否以xxx结尾，这种方式多用于网络请求。如：如果要跳转的链接以<a href="http://www.baidu.com开头，则跳转，否则不予跳转。" target="_blank">http://www.baidu.com开头，则跳转，否则不予跳转。</a></li>
 <li>查找字符串中是否包含某字符串</li>
+<li>获得字符串中，某个位置的字符</li>
 </ol>
 <pre><code class="lang-objc"><span class="hljs-built_in">BOOL</span> isSuffix = [string10 hasSuffix:<span class="hljs-string">@"com"</span>]; <span class="hljs-comment">// 后缀是否是com</span>
 <span class="hljs-built_in">BOOL</span> isPrefix = [string10 hasPrefix:<span class="hljs-string">@"www"</span>]; <span class="hljs-comment">// 前缀是否是www</span>
@@ -700,8 +719,11 @@
 <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%ld, %ld"</span>, range<span class="hljs-variable">.location</span>, range<span class="hljs-variable">.length</span>); <span class="hljs-comment">// 分开输出</span>
 <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%@"</span>, NSStringFromRange(range)); <span class="hljs-comment">// 将range转为NSString进行输出</span>
 </code></pre>
-<h2 id="span-idreplacespan">替换<span id='replace'></span></h2>
-<p>替换同样分为两种：</p>
+<pre><code class="lang-objc"><span class="hljs-keyword">char</span> a = [<span class="hljs-string">@"abcSeW"</span> characterAtIndex:<span class="hljs-number">3</span>];
+</code></pre>
+<p><span id='replace'></span></p>
+<h2 id="">替换</h2>
+<p>替换分为两种：</p>
 <ol>
 <li>按字符串替换；</li>
 <li>按范围替换；</li>
@@ -712,11 +734,52 @@
 <span class="hljs-comment">// 将string10中的0~2范围字符串，替换为@"33"</span>
 <span class="hljs-built_in">NSString</span> *string12 = [string10 stringByReplacingCharactersInRange:NSMakeRange(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>) withString:<span class="hljs-string">@"33"</span>];
 </code></pre>
-<h2 id="span-idlengthspan">获得长度<span id='length'></span></h2>
+<p><span id='length'></span></p>
+<h2 id="">获得长度</h2>
 <pre><code class="lang-objc"><span class="hljs-built_in">NSInteger</span> length1 = [string12 length]; <span class="hljs-comment">// 可以使用方法访问</span>
 <span class="hljs-built_in">NSInteger</span> length2 = string12<span class="hljs-variable">.length</span>; <span class="hljs-comment">// 也可以使用点语法，直接访问(点语法会在属性部分介绍)</span>
 </code></pre>
-<h2 id="span-idcomparespan">字符串比较<span id='compare'></span></h2>
+<p><span id='compare'></span></p>
+<h2 id="">字符串比较</h2>
+<p><code>==</code>比较的是对象的地址，值不能直接使用<code>==</code>来进行比较，应该使用对应的方法。</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">BOOL</span> isEqual = [string10 isEqualToString:string11]; <span class="hljs-comment">// 比较字符串的值是否相同</span>
+</code></pre>
+<p>比较两个字符串大小，需要用到NSComparisonResult枚举类型。具体定义如下：</p>
+<pre><code class="lang-objc"><span class="hljs-keyword">typedef</span> NS_ENUM(<span class="hljs-built_in">NSInteger</span>, NSComparisonResult) {
+    NSOrderedAscending = -<span class="hljs-number">1</span>L,        <span class="hljs-comment">// 升序</span>
+    NSOrderedSame,                    <span class="hljs-comment">// 相同</span>
+    NSOrderedDescending            <span class="hljs-comment">// 降序</span>
+};
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-comment">// 判断两个字符串大小</span>
+NSComparisonResult compareResult1 = [string10 compare:string11]; <span class="hljs-comment">// 区分大小写</span>
+NSComparisonResult compareResult2 = [string10 caseInsensitiveCompare:string11]; <span class="hljs-comment">// 不区分大小写</span>
+</code></pre>
+<p><span id='transform'></span></p>
+<h2 id="">转换类型</h2>
+<p>在实际操作过程中，可能需要遇到字符串转为其他类型的情况，如计算器中，获得输入框中的文字是字符串类型，但计算时，需要将它转为<code>double</code>类型。</p>
+<pre><code class="lang-objc"><span class="hljs-keyword">double</span> number1    = [<span class="hljs-string">@"2.4"</span> doubleValue]; <span class="hljs-comment">// number1 = 2.4</span>
+<span class="hljs-keyword">int</span> number2       = [<span class="hljs-string">@"2"</span> intValue];      <span class="hljs-comment">// number2 = 2</span>
+<span class="hljs-built_in">NSInteger</span> number3 = [<span class="hljs-string">@"2"</span> integerValue];  <span class="hljs-comment">// number3 = 2</span>
+<span class="hljs-keyword">float</span> number4     = [<span class="hljs-string">@"4.6"</span> floatValue];  <span class="hljs-comment">// number4 = 4.6</span>
+<span class="hljs-built_in">BOOL</span> number5      = [<span class="hljs-string">@"2"</span> boolValue];     <span class="hljs-comment">// number5 = YES</span>
+</code></pre>
+<p>对于数字类型的字符串，直接转换就行。</p>
+<ul>
+<li>对于<code>intValue</code>，字符转换为0。如：<code>[@&quot;abc&quot; intValue] == 0</code>；</li>
+<li>对于<code>boolValue</code>，以<code>y</code>，<code>Y</code>，<code>t</code>，<code>T</code>开头的字符串与结果不为0的数字，转换结果为YES，其余情况为NO。如：<code>[@&quot;t&quot; boolValue] == YES</code>，<code>[@&quot;0&quot; boolValue] == NO</code>；</li>
+</ul>
+<p>还可以将数组转为字符串（将数组的某一个元素，以某个分隔符，拼接成字符串）</p>
+<pre><code class="lang-objc"><span class="hljs-comment">// 定义数组</span>
+<span class="hljs-built_in">NSArray</span> *array = @[<span class="hljs-string">@"abc"</span>, <span class="hljs-string">@"def"</span>];
+<span class="hljs-comment">// 将数组以-拼接为字符串</span>
+<span class="hljs-built_in">NSString</span> *string15 = [array componentsJoinedByString:<span class="hljs-string">@"-"</span>]; <span class="hljs-comment">// @"abc-def"</span>
+</code></pre>
+<p><span id='upper-lower'></span></p>
+<h2 id="">转大小写</h2>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSString</span> *string13 = [<span class="hljs-string">@"abcSeW"</span> uppercaseString]; <span class="hljs-comment">// 转为大写</span>
+<span class="hljs-built_in">NSString</span> *string14 = [<span class="hljs-string">@"abcSeW"</span> lowercaseString]; <span class="hljs-comment">// 转为小写</span>
+</code></pre>
 
                     
                     </section>
