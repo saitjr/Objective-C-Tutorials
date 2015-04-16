@@ -21,7 +21,7 @@
     <link rel="next" href="../data-types/nsmutablearray.html" />
     
     
-    <link rel="prev" href="../data-types/nsmutabledictionary.html" />
+    <link rel="prev" href="../data-types/nsnumber.html" />
     
 
         
@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="3.9" data-basepath=".." data-revision="1428369757718">
+    <div class="book"  data-level="3.6" data-basepath=".." data-revision="1428453664176">
     
 
 <div class="book-summary">
@@ -436,61 +436,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.6" data-path="data-types/nsnull.html">
-            
-                
-                    <a href="../data-types/nsnull.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.6.</b>
-                        
-                         NSNull
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.7" data-path="data-types/nsdictionary.html">
-            
-                
-                    <a href="../data-types/nsdictionary.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.7.</b>
-                        
-                         NSDictionary
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.8" data-path="data-types/nsmutabledictionary.html">
-            
-                
-                    <a href="../data-types/nsmutabledictionary.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.8.</b>
-                        
-                         NSMutableDictionary
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter active" data-level="3.9" data-path="data-types/nsarray.html">
+        <li class="chapter active" data-level="3.6" data-path="data-types/nsarray.html">
             
                 
                     <a href="../data-types/nsarray.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.9.</b>
+                            <b>3.6.</b>
                         
                          NSArray
                     </a>
@@ -500,13 +452,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.10" data-path="data-types/nsmutablearray.html">
+        <li class="chapter " data-level="3.7" data-path="data-types/nsmutablearray.html">
             
                 
                     <a href="../data-types/nsmutablearray.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.10.</b>
+                            <b>3.7.</b>
                         
                          NSMutableArray
                     </a>
@@ -516,15 +468,63 @@
         </li>
     
         
-        <li class="chapter " data-level="3.11" data-path="data-types/nsset.html">
+        <li class="chapter " data-level="3.8" data-path="data-types/nsdictionary.html">
+            
+                
+                    <a href="../data-types/nsdictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         NSDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9" data-path="data-types/nsmutabledictionary.html">
+            
+                
+                    <a href="../data-types/nsmutabledictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                         NSMutableDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.10" data-path="data-types/nsset.html">
             
                 
                     <a href="../data-types/nsset.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.11.</b>
+                            <b>3.10.</b>
                         
                          NSSet
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.11" data-path="data-types/nsnull.html">
+            
+                
+                    <a href="../data-types/nsnull.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.11.</b>
+                        
+                         NSNull
                     </a>
                 
             
@@ -625,9 +625,109 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_34">
+                    <section class="normal" id="section-gitbook_4">
                     
                         <h1 id="nsarray">NSArray</h1>
+<p>不可变数组。OC中的集合不再是单纯的数组，而范围了三大类：数组、字典、集。</p>
+<p>学习数组，首先明白一下几个内容：</p>
+<ul>
+<li>数组分为不可变数组(NSArray)与可变对象(NSMutableArray)；</li>
+<li>只能装对象，基本数据类型包装成NSNumber，复杂类型包装成NSValue；</li>
+<li>nil作为结束标示；</li>
+<li>下标从0开始；</li>
+<li>数组中的元素不一定为一个类型，可以存在<code>NSString</code>，也可以存在<code>NSNumber</code>。</li>
+</ul>
+<h2 id="">常用方法</h2>
+<p>与不可变字符串<code>NSString</code>类似，不可变数组<code>NSArray</code>操作也不在原数组上进行，而是通过返回一个新的数组来操作。</p>
+<ul>
+<li><a href="#init">初始化</a></li>
+<li><a href="#count">获取数组元素个数</a></li>
+<li><a href="#append">添加元素</a></li>
+<li><a href="#search">查找元素</a></li>
+<li><a href="#objectAtIndex">获取元素</a></li>
+<li><a href="#delete">截取部分元素</a></li>
+<li><a href="#sort">数组排序</a></li>
+</ul>
+<p><span id='init'></span></p>
+<h2 id="">初始化</h2>
+<h3 id="">简化操作</h3>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSArray</span> *array1 = @[<span class="hljs-string">@"1"</span>, <span class="hljs-string">@"2"</span>, <span class="hljs-string">@"3"</span>];
+</code></pre>
+<h3 id="">实例方法</h3>
+<pre><code class="lang-objc"><span class="hljs-comment">// 按元素初始化（常用）</span>
+<span class="hljs-built_in">NSArray</span> *array2 = [[<span class="hljs-built_in">NSArray</span> alloc] initWithObjects:<span class="hljs-string">@"1"</span>, <span class="hljs-string">@"2"</span>, <span class="hljs-string">@"3"</span>, <span class="hljs-literal">nil</span>];
+
+<span class="hljs-comment">// 按已有的数组进行初始化（初始化出来和array1的元素相同）</span>
+<span class="hljs-built_in">NSArray</span> *array3 = [[<span class="hljs-built_in">NSArray</span> alloc] initWithArray:array1];
+</code></pre>
+<h3 id="">遍历构造</h3>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSArray</span> *array4 = [<span class="hljs-built_in">NSArray</span> arrayWithObjects:<span class="hljs-string">@"1"</span>, <span class="hljs-string">@"2"</span>, <span class="hljs-string">@"3"</span>, <span class="hljs-literal">nil</span>];
+<span class="hljs-built_in">NSArray</span> *array5 = [<span class="hljs-built_in">NSArray</span> arrayWithArray:array1];
+</code></pre>
+<p><span id='count'></span></p>
+<h2 id="">获取数组元素个数</h2>
+<p>获取数组元素个数的方法与<code>NSString</code>获取长度有区别，使用的是<code>count</code>，而不是<code>length</code>。</p>
+<pre><code class="lang-objc">NSUInteger count1 = [array1 count];
+NSUInteger count2 = array1<span class="hljs-variable">.count</span>;
+</code></pre>
+<p><span id='append'></span></p>
+<h2 id="">添加元素</h2>
+<pre><code class="lang-objc"><span class="hljs-comment">// 从尾部追加一个元素</span>
+<span class="hljs-built_in">NSArray</span> *array6 = [array1 arrayByAddingObject:<span class="hljs-string">@"4"</span>];
+
+<span class="hljs-comment">// 从尾部依次追加array2中的元素</span>
+<span class="hljs-built_in">NSArray</span> *array7 = [array1 arrayByAddingObjectsFromArray:array2];
+</code></pre>
+<p><span id='search'></span></p>
+<h2 id="">查找元素</h2>
+<h3 id="">是否包含某元素</h3>
+<pre><code class="lang-objc"><span class="hljs-built_in">BOOL</span> isContain = [array2 containsObject:<span class="hljs-string">@"1"</span>];
+</code></pre>
+<h3 id="">元素具体位置</h3>
+<p>查找并返回元素的具体位置，如果没找到，返回NSNotFound。</p>
+<pre><code class="lang-objc">NSUInteger index = [array2 indexOfObject:<span class="hljs-string">@"2"</span>];
+<span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"是否找到 = %d"</span>, index == <span class="hljs-built_in">NSNotFound</span>);
+</code></pre>
+<p><span id='objectAtIndex'></p>
+<h2 id="">获取元素</h2>
+<p><font color=red>存入的是什么类型，取出的时候，就需要什么类型去接收</font>。</p>
+<h3 id="">根据下标获取元素</h3>
+<pre><code class="lang-objc"><span class="hljs-comment">// 两种取值方式等价</span>
+<span class="hljs-built_in">NSString</span> *string1 = array2[<span class="hljs-number">0</span>];
+<span class="hljs-built_in">NSString</span> *string2 = [array2 objectAtIndex:<span class="hljs-number">0</span>];
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-comment">// 取出一个与最后一个元素</span>
+<span class="hljs-built_in">NSString</span> *string3 = [array2 firstObject]; <span class="hljs-comment">// 第一个元素</span>
+<span class="hljs-built_in">NSString</span> *string4 = [array2 lastObject];  <span class="hljs-comment">// 最后一个元素</span>
+</code></pre>
+<p><span id='sub'></span></p>
+<h2 id="">截取部分元素</h2>
+<p>通过给定范围，截取数组元素中的部分元素，存入新数组。</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSArray</span> *array8 = [array2 subarrayWithRange:NSMakeRange(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>)];
+</code></pre>
+<p><span id='sort'></span></p>
+<h2 id="">数组排序</h2>
+<p>一般的<font color=red>字符串</font>数组排序会使用到<code>NSString</code>提供的<code>compare:</code>或<code>caseInsensitiveCompare:</code>方法，然后调用<code>sortedArrayUsingSelector</code>达到对<code>array2</code>中，存储的<font color=red>字符串</font>进行排序的目的。</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSArray</span> *array9 = [array2 sortedArrayUsingSelector:<span class="hljs-keyword">@selector</span>(caseInsensitiveCompare:)];
+</code></pre>
+<p>注意上面写法的几点要求：</p>
+<ol>
+<li>array2数组中存储的全是字符串；</li>
+<li>比较大小需要传的@selector类型中，<code>caseInsensitiveCompare</code>是字符串中的方法；</li>
+<li>这里选择器<code>@selector</code>返回值类型必须是<code>NSComparisonResult</code>。</li>
+</ol>
+<p>根据这几点要求，我们可以写出自己的比较大小的方法，练习如下：</p>
+<ol>
+<li>创建一个<code>Person</code>类；</li>
+<li><code>Person</code>类有一个成员变量<code>name</code>；</li>
+<li>初始化多个<code>Person</code>，并给出不同的<code>name</code>值；</li>
+<li>将初始化出来的<code>Person</code>对象存入<code>NSArray</code>；</li>
+<li>根据<code>name</code>的大小，对<code>Person</code>进行升序排列。</li>
+</ol>
+<p>实现如下：</p>
+<p>1.创建<code>Person</code>类，并给出成员变量<code>name</code>，并实现响应的<code>getter</code> / <code>setter</code>方法；</p>
+<p>2.为了输出方便，重写<code>description</code>方法，返回<code>name</code>；
+3. </p>
 
                     
                     </section>
@@ -638,7 +738,7 @@
         </div>
 
         
-        <a href="../data-types/nsmutabledictionary.html" class="navigation navigation-prev " aria-label="Previous page: NSMutableDictionary"><i class="fa fa-angle-left"></i></a>
+        <a href="../data-types/nsnumber.html" class="navigation navigation-prev " aria-label="Previous page: NSNumber"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../data-types/nsmutablearray.html" class="navigation navigation-next " aria-label="Next page: NSMutableArray"><i class="fa fa-angle-right"></i></a>

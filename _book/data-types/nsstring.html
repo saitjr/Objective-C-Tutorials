@@ -33,7 +33,7 @@
 
 
         
-    <div class="book"  data-level="3.2" data-basepath=".." data-revision="1428369757718">
+    <div class="book"  data-level="3.2" data-basepath=".." data-revision="1428453664176">
     
 
 <div class="book-summary">
@@ -436,61 +436,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.6" data-path="data-types/nsnull.html">
-            
-                
-                    <a href="../data-types/nsnull.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.6.</b>
-                        
-                         NSNull
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.7" data-path="data-types/nsdictionary.html">
-            
-                
-                    <a href="../data-types/nsdictionary.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.7.</b>
-                        
-                         NSDictionary
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.8" data-path="data-types/nsmutabledictionary.html">
-            
-                
-                    <a href="../data-types/nsmutabledictionary.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.8.</b>
-                        
-                         NSMutableDictionary
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.9" data-path="data-types/nsarray.html">
+        <li class="chapter " data-level="3.6" data-path="data-types/nsarray.html">
             
                 
                     <a href="../data-types/nsarray.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.9.</b>
+                            <b>3.6.</b>
                         
                          NSArray
                     </a>
@@ -500,13 +452,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.10" data-path="data-types/nsmutablearray.html">
+        <li class="chapter " data-level="3.7" data-path="data-types/nsmutablearray.html">
             
                 
                     <a href="../data-types/nsmutablearray.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.10.</b>
+                            <b>3.7.</b>
                         
                          NSMutableArray
                     </a>
@@ -516,15 +468,63 @@
         </li>
     
         
-        <li class="chapter " data-level="3.11" data-path="data-types/nsset.html">
+        <li class="chapter " data-level="3.8" data-path="data-types/nsdictionary.html">
+            
+                
+                    <a href="../data-types/nsdictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         NSDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.9" data-path="data-types/nsmutabledictionary.html">
+            
+                
+                    <a href="../data-types/nsmutabledictionary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                         NSMutableDictionary
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.10" data-path="data-types/nsset.html">
             
                 
                     <a href="../data-types/nsset.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.11.</b>
+                            <b>3.10.</b>
                         
                          NSSet
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.11" data-path="data-types/nsnull.html">
+            
+                
+                    <a href="../data-types/nsnull.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.11.</b>
+                        
+                         NSNull
                     </a>
                 
             
@@ -625,7 +625,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_41">
+                    <section class="normal" id="section-gitbook_14">
                     
                         <h1 id="nsstring">NSString</h1>
 <p>字符串类型</p>
@@ -766,7 +766,7 @@ NSComparisonResult compareResult2 = [string10 caseInsensitiveCompare:string11]; 
 </code></pre>
 <p>对于数字类型的字符串，直接转换就行。</p>
 <ul>
-<li>对于<code>intValue</code>，字符转换为0。如：<code>[@&quot;abc&quot; intValue] == 0</code>；</li>
+<li>对于<code>intValue</code>，转换到字符以前。如：<code>[@&quot;123ab0c&quot; intValue] == 123</code>；</li>
 <li>对于<code>boolValue</code>，以<code>y</code>，<code>Y</code>，<code>t</code>，<code>T</code>开头的字符串与结果不为0的数字，转换结果为YES，其余情况为NO。如：<code>[@&quot;t&quot; boolValue] == YES</code>，<code>[@&quot;0&quot; boolValue] == NO</code>；</li>
 </ul>
 <p>还可以将数组转为字符串（将数组的某一个元素，以某个分隔符，拼接成字符串）</p>
